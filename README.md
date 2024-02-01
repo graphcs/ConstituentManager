@@ -96,4 +96,4 @@ npm run
 Feel free to contribute by opening issues or submitting pull requests. Read the Contributing Guidelines for more details.
 
 ## License
-This project is licensed under the [MIT License](https://github.com/graphcs/ConstituentManager/license).
+This project is licensed under the [MIT License](https://github.com/graphcs/ConstituentManager/blob/main/LICENSE).
