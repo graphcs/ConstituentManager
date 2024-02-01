@@ -25,6 +25,8 @@ async function main() {
 }
 
 //server
-app.listen(port,()=>{
+const server = app.listen(port,()=>{
     console.log(`APP IS LISTENING ON PORT ${port}`);
-})
+});
+
+module.exports = server;
