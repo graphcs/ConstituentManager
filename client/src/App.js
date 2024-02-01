@@ -5,7 +5,7 @@ import ConstituentForm from './components/ConstituentForm';
 import DuplicateChecker from './components/DuplicateChecker';
 import CsvGenerator from './components/CsvGenerator';
 import Home from './components/Home';
-
+import './App.css'
 const App = () => {
   return (
     <Router>

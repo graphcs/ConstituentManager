@@ -23,7 +23,7 @@ const ConstituentForm = () => {
     e.preventDefault();
 
     try {
-      const res = await Axios.post('http://localhost:9090/api/constituents', formData);
+      const res = await Axios.post('http://45.55.42.44:9090/api/constituents', formData);
       if (res.data && res.data.message) {
         if (res.data.message.includes('updated')) {
           alert('Constituent updated successfully!');

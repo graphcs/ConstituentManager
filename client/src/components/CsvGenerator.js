@@ -9,12 +9,13 @@ const CsvGenerator = () => {
 
   const handleGenerateCsv = async () => {
     try {
-      const url = `http://localhost:9090/api/constituents/export?startTime=${startTime}&endTime=${endTime}`;
+      const url = `http://45.55.42.44:9090/api/constituents/export?startTime=${startTime}&endTime=${endTime}`;
       const response = await Axios.get(url, { responseType: 'blob' });
 
       // Save the CSV file using FileSaver
       saveAs(new Blob([response.data]), 'constituents.csv');
       alert('CSV generated and downloaded successfully!');
+      
     } catch (error) {
       console.error('Error generating CSV:', error);
       alert('Error generating CSV. Please try again.');
