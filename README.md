@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# ConstituentManager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ConstituentManager is a web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and styled with Tailwind CSS. It is designed to manage constituents effectively.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Add Constituents:** Easily add new constituents with relevant details.
+- **View Constituents:** Browse and search through the list of constituents.
+- **Update** Modify existing constituents.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Make sure you have the following installed on your machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [MongoDB](https://www.mongodb.com/try/download/community) (Make sure MongoDB server is running)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git clone https://github.com/graphcs/ConstituentManager
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project directory:
+```bash
+cd ConstituentManager
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install server dependencies:
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Move to the client directory and install client dependencies:
+```bash
+cd client
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Return to the project root:
+```bash
+cd ..
+```
 
-## Learn More
+## Configuration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6. Create a .env file in the server:
+```bash
+touch .env
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+7. Add the following configurations to the .env file:
+```bash
+PORT=9090
+MONGO_URI=your_mongodb_connection_string
+```
 
-### Code Splitting
+8. Create a .env file in the client:
+```bash
+touch .env
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+9. Add the following configurations to the .env file:
+```bash
+REACT_APP_API_URL=your_server_api_url
+```
+## Usage
 
-### Analyzing the Bundle Size
+10. Start the server by running below command in server folder:
+```bash
+npm run
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+11. In a separate terminal, start the client by running below command in client folder:
+```bash
+npm run
+```
 
-### Making a Progressive Web App
+12. Open your browser and go to [http://localhost:3000](http://localhost:3000) to access 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
+Feel free to contribute by opening issues or submitting pull requests. Read the Contributing Guidelines for more details.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+This project is licensed under the [MIT License](https://github.com/graphcs/ConstituentManager/license).
