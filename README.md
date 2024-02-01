@@ -82,12 +82,12 @@ REACT_APP_API_URL=your_server_api_url
 
 10. Start the server by running below command in server folder:
 ```bash
-npm run
+npm start
 ```
 
 11. In a separate terminal, start the client by running below command in client folder:
 ```bash
-npm run
+npm start
 ```
 
 12. Open your browser and go to [http://localhost:3000](http://localhost:3000) to access 
