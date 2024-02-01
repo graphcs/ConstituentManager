@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ConstituentForm = () => {
   const navigate= useNavigate();
-
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [formData, setFormData] = useState({
     email: '',
     name: '',
@@ -23,7 +23,7 @@ const ConstituentForm = () => {
     e.preventDefault();
 
     try {
-      const res = await Axios.post('http://45.55.42.44:9090/api/constituents', formData);
+      const res = await Axios.post(`${apiUrl}/api/constituents`, formData);
       if (res.data && res.data.message) {
         if (res.data.message.includes('updated')) {
           alert('Constituent updated successfully!');

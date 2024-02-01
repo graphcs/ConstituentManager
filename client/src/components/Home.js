@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 function Home() {
     // State for constituents data
     const [constituents, setConstituents] = useState([]);
@@ -7,13 +8,14 @@ function Home() {
     const [searchTerm, setSearchTerm] = useState('');
     // State for sorting
     const [sortOrder, setSortOrder] = useState('asc');
-
+    //apiURL
+    const apiUrl = process.env.REACT_APP_API_URL;
     // useEffect to fetch constituents data
     useEffect(() => {
         const fetchData = async () => {
             try {
                 // Replace 'your-api-endpoint' with the actual API endpoint
-                const response = await fetch('http://45.55.42.44:9090/api/constituents');
+                const response = await fetch(`${apiUrl}/api/constituents`);
                 const data = await response.json();
                 setConstituents(data.data);
             } catch (error) {
@@ -98,7 +100,7 @@ function Home() {
                     </thead>
                     <tbody>
                         {filteredConstituents.map((constituent) => (
-                            <tr key={constituent.id}>
+                            <tr key={constituent._id}>
                                 <td className="p-2 border-b">{constituent.name}</td>
                                 <td className="p-2 border-b">{constituent.email}</td>
                                 <td className="p-2 border-b">{constituent.address}</td>

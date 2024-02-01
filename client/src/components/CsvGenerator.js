@@ -8,8 +8,10 @@ const CsvGenerator = () => {
   const [endTime, setEndTime] = useState('');
 
   const handleGenerateCsv = async () => {
+    const apiUrl = process.env.REACT_APP_API_URL;
+    console.log(apiUrl);
     try {
-      const url = `http://45.55.42.44:9090/api/constituents/export?startTime=${startTime}&endTime=${endTime}`;
+      const url = `${apiUrl}/api/constituents/export?startTime=${startTime}&endTime=${endTime}`;
       const response = await Axios.get(url, { responseType: 'blob' });
 
       // Save the CSV file using FileSaver

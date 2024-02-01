@@ -3,9 +3,10 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const DuplicateChecker = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const handleCheckDuplicates = async () => {
     try {
-      const res = await Axios.get('http://45.55.42.44:9090/api/constituents/check_duplicates');
+      const res = await Axios.get(`${apiUrl}/api/constituents/check_duplicates`);
       console.log(res);
       if (res.data) {
         alert(res.data.message);
