@@ -24,6 +24,10 @@
   color: white;
 }
 
+.justify-center{
+  justify-content: center;
+}
+
 .App-link {
   color: #61dafb;
 }

@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 const Constituent = require('./model/Constituent'); // Update the path
+require('dotenv').config();
+
+const mongodbURL= process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/constituent_database'
+
 
 // Sample data
 const seedData = [
@@ -55,9 +59,9 @@ async function seedDatabase() {
 
 main().catch(err => console.log(err))
 async function main() {
-    await mongoose.connect('mongodb://0.0.0.0:27017/constituent_database');
+    await mongoose.connect(mongodbURL);
     console.log("connected");
 }
-
+console.log(mongodbURL);
 // Run the seed function
 seedDatabase();

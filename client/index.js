@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 // Serve the React app
 app.use(express.static(path.join(__dirname, '/build')));
