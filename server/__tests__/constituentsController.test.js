@@ -10,24 +10,44 @@ describe('constituentsController', () => {
         address: '123 Test St',
     };
 
+    const newConstituent = {
+        email: 'new@test.com',
+        name: 'New User',
+        address: '456 New St',
+    };
+
     afterEach(async () => {
-        // Clean up test data after each test
-        await Constituent.deleteMany({});
+        // Clean up test data after each test by deleting the specific test constituent
+        await Constituent.deleteMany({ email: 'test@example.com' });
+        await Constituent.deleteMany({ email: 'new@test.com' });
+
     });
 
     describe('GET /api/constituents', () => {
-        it('should get all constituents', async () => {
+        it('should get all constituents and verify database increases by one', async () => {
+            // Query the database for the count of constituents before insertion
+            const initialCount = await Constituent.countDocuments();
+        
             // Insert a test constituent into the database
             await Constituent.create(testConstituent);
-
-            // Make a request to the API endpoint
+        
+            // Make a request to the API endpoint to get all constituents
             const res = await request(app).get('/api/constituents');
-            console.log(res);
+        
+            // Query the database for the count of constituents after insertion
+            const finalCount = await Constituent.countDocuments();
+        
+            // Assertions
             expect(res.status).toBe(200);
             expect(res.body.success).toBe(true);
-            expect(res.body.data).toHaveLength(1);
-            // Add more assertions based on your response structure
-        });
+            
+            // Check if the API response includes the newly added constituent
+            // This assumes your API returns all constituents, including the newly added one
+            expect(res.body.data).toEqual(expect.arrayContaining([expect.objectContaining(testConstituent)]));
+        
+            // Verify the database count increased by exactly one
+            expect(finalCount - initialCount).toBe(1);
+        });        
     });
 
     describe('GET /api/constituents/export', () => {
@@ -47,12 +67,6 @@ describe('constituentsController', () => {
     describe('POST /api/constituents', () => {
         it('should add a new constituent', async () => {
             // Make a request to add a new constituent
-            const newConstituent = {
-                email: 'new@test.com',
-                name: 'New User',
-                address: '456 New St',
-            };
-
             const res = await request(app)
                 .post('/api/constituents')
                 .send(newConstituent);

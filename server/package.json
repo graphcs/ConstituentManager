@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon index.js",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "pretest": "lsof -ti :9090 | xargs -r kill"
   },
   "author": "",
   "license": "ISC",
