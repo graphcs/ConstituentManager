@@ -124,3 +124,9 @@ npm install pm2 -g
 pm2 start npm --name "mern-app" -- start
 pm2 restart mern-app      
 ```
+
+18. To rebuild the client:
+```bash
+mern-app# cd client 
+mern-app# npm run build
+```
