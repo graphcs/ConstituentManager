@@ -77,7 +77,8 @@ mern-app# node seed.js
 mongodb://0.0.0.0:27017/constituentmanager
 connected
 Database seeded successfully.
-mern-app# ```
+mern-app 
+```
 
 ## Configuration
 
