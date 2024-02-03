@@ -72,8 +72,12 @@ docker run -d --name mongodb -v mongodbdata:/data/db -p 27017:27017 mongo
 
 9. Seed the database:
 ```bash
-node server/seed.js 
-```
+mern-app# cd server 
+mern-app# node seed.js 
+mongodb://0.0.0.0:27017/constituentmanager
+connected
+Database seeded successfully.
+mern-app# ```
 
 ## Configuration
 
