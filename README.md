@@ -136,3 +136,8 @@ pm2 start npm --name "mern-app-client" -- start
 mern-app# cd client 
 mern-app# npm run build
 ```
+
+19. To run server tests:
+```bash
+cd server
+npm test```
