@@ -120,6 +120,7 @@ npm start
 17. You can also start and restart using `pm2`:
 
 ```bash
- pm2 start npm --name "mern-app" -- start
+npm install pm2 -g        
+pm2 start npm --name "mern-app" -- start
 pm2 restart mern-app      
 ```
