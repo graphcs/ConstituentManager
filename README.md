@@ -56,44 +56,58 @@ npm install
 cd ..
 ```
 
+## Database setup
+
+6. Install Docker: https://docs.docker.com/get-docker/
+
+7. Set up docker volume for mongodb:
+```bash
+docker volume create mongodbdata
+```
+
+8. Start MongoDB in docker with volume for data persistence:
+```
+docker run -d --name mongodb -v mongodbdata:/data/db -p 27017:27017 mongo
+```
+
+9. Seed the database:
+```bash
+node server/seed.js 
+```
+
 ## Configuration
 
-6. Create a .env file in the server:
+10. Create a .env file in the server:
 ```bash
 touch .env
 ```
 
-7. Add the following configurations to the `/server/.env` file:
+11. Add the following configurations to the `/server/.env` file:
 ```bash
 PORT=9090
 MONGO_URI=mongodb://0.0.0.0:27017/constituentmanager
 ```
 
-8. Create a .env file in the client:
+12. Create a .env file in the client:
 ```bash
 touch .env
 ```
 
-9. Add the following configurations to the `/client/.env` file:
+13. Add the following configurations to the `/client/.env` file:
 ```bash
 REACT_APP_API_URL=http://45.55.42.44:9090
 PORT=80
 ```
 ## Usage
 
-10. Start the server by running below command in server folder:
+14. Start the server by running below command in server folder:
 ```bash
 npm start
 ```
 
-11. In a separate terminal, start the client by running below command in client folder:
+15. In a separate terminal, start the client by running below command in client folder:
 ```bash
 npm start
 ```
 
-12. Seed the database:
-```bash
-node server/seed.js 
-```
-
-13. Open your browser and go to [http://localhost:80](http://localhost:80) to access 
+16. Open your browser and go to [http://localhost:80](http://localhost:80) to access 
