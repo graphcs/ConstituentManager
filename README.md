@@ -117,12 +117,18 @@ npm start
 
 16. Open your browser and go to [http://localhost:80](http://localhost:80) to access 
 
-17. You can also start and restart using `pm2`:
+17. You can also start and restart server using `pm2` (from server folder):
 
 ```bash
 npm install pm2 -g        
-pm2 start npm --name "mern-app" -- start
+pm2 start npm --name "mern-app-server" -- start
 pm2 restart mern-app      
+```
+
+for client:
+
+```bash
+pm2 start npm --name "mern-app-client" -- start
 ```
 
 18. To rebuild the client:
