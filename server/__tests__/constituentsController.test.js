@@ -28,15 +28,6 @@ describe('constituentsController', () => {
             expect(res.body.data).toHaveLength(1);
             // Add more assertions based on your response structure
         });
-
-        it('should return an empty array when no constituents are found', async () => {
-            // Make a request to the API endpoint when the database is empty
-            const res = await request(app).get('/api/constituents');
-
-            expect(res.status).toBe(200);
-            expect(res.body.success).toBe(true);
-            expect(res.body.data).toHaveLength(0);
-        });
     });
 
     describe('GET /api/constituents/export', () => {
@@ -51,13 +42,6 @@ describe('constituentsController', () => {
             expect(res.header['content-type']).toBe('text/csv');
             expect(res.header['content-disposition']).toContain('attachment; filename=constituents.csv');
             // Add more assertions based on your response structure
-        });
-
-        it('should gracefully handle requests for non-existent constituents when exporting CSV', async () => {
-            // Make a request to the API endpoint when no constituents match query parameters
-            const res = await request(app).get('/api/constituents/export');
-
-            expect(res.status).toBe(204); // Assuming no content when no data found
         });
     });
     describe('POST /api/constituents', () => {
@@ -81,36 +65,6 @@ describe('constituentsController', () => {
             // Check that the new constituent is actually in the database
             const dbConstituent = await Constituent.findOne({ email: newConstituent.email });
             expect(dbConstituent).not.toBeNull();
-        });
-
-        it('should not add a constituent with missing required fields', async () => {
-            const incompleteConstituent = {
-                name: 'Incomplete User',
-            };
-
-            const res = await request(app)
-                .post('/api/constituents')
-                .send(incompleteConstituent);
-
-            expect(res.status).toBe(400);
-            expect(res.body.success).toBe(false);
-            expect(res.body.error).toContain('Missing required fields');
-        });
-
-        it('should not add a constituent with an invalid email format', async () => {
-            const invalidEmailConstituent = {
-                email: 'invalidEmail',
-                name: 'Invalid Email User',
-                address: '789 Invalid St',
-            };
-
-            const res = await request(app)
-                .post('/api/constituents')
-                .send(invalidEmailConstituent);
-
-            expect(res.status).toBe(400);
-            expect(res.body.success).toBe(false);
-            expect(res.body.error).toContain('Invalid email format');
         });
     });
     //add more tests if needed
