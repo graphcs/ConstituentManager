@@ -64,7 +64,7 @@ function Home() {
                         </li>
                         <li className="mr-4">
                             <Link to="/check_duplicates" className="text-blue-500 hover:underline">
-                                Check Duplicates
+                                Merge Duplicates
                             </Link>
                         </li>
                         <li className="mr-4">

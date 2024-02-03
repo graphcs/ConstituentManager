@@ -24,12 +24,12 @@ const DuplicateChecker = () => {
         <Link to="/" className="text-blue-500 hover:underline mb-4 inline-block">
           Back to Home
         </Link>
-        <h2 className="text-3xl font-bold mb-4">Check Duplicates</h2>
+        <h2 className="text-3xl font-bold mb-4">Merge Duplicates</h2>
         <button
           onClick={handleCheckDuplicates}
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none"
         >
-          Check Duplicates
+          Merge Duplicates
         </button>
       </div>
     </div>
