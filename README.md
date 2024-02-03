@@ -63,10 +63,10 @@ cd ..
 touch .env
 ```
 
-7. Add the following configurations to the .env file:
+7. Add the following configurations to the `/server/.env` file:
 ```bash
 PORT=9090
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=mongodb://0.0.0.0:27017/constituentmanager
 ```
 
 8. Create a .env file in the client:
@@ -74,9 +74,10 @@ MONGO_URI=your_mongodb_connection_string
 touch .env
 ```
 
-9. Add the following configurations to the .env file:
+9. Add the following configurations to the `/client/.env` file:
 ```bash
-REACT_APP_API_URL=your_server_api_url
+REACT_APP_API_URL=http://45.55.42.44:9090
+PORT=80
 ```
 ## Usage
 
@@ -90,10 +91,4 @@ npm start
 npm start
 ```
 
-12. Open your browser and go to [http://localhost:3000](http://localhost:3000) to access 
-
-## Contributing
-Feel free to contribute by opening issues or submitting pull requests. Read the Contributing Guidelines for more details.
-
-## License
-This project is licensed under the [MIT License](https://github.com/graphcs/ConstituentManager/blob/main/LICENSE).
+12. Open your browser and go to [http://localhost:80](http://localhost:80) to access 
