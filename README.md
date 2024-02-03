@@ -116,3 +116,10 @@ npm start
 ```
 
 16. Open your browser and go to [http://localhost:80](http://localhost:80) to access 
+
+17. You can also start and restart using `pm2`:
+
+```bash
+ pm2 start npm --name "mern-app" -- start
+pm2 restart mern-app      
+```
