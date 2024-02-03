@@ -62,11 +62,15 @@ function Home() {
                                 Add Constituent
                             </Link>
                         </li>
+                        
+                        {/* TODO: Uncomment to support merging duplicates. Note: Must also remove unique email schema key for it to be useful.
                         <li className="mr-4">
                             <Link to="/check_duplicates" className="text-blue-500 hover:underline">
                                 Merge Duplicates
                             </Link>
                         </li>
+                        */}
+
                         <li className="mr-4">
                             <Link to="/export" className="text-blue-500 hover:underline">
                                 Export CSV
