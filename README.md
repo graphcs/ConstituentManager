@@ -91,4 +91,9 @@ npm start
 npm start
 ```
 
-12. Open your browser and go to [http://localhost:80](http://localhost:80) to access 
+12. Seed the database:
+```bash
+node server/seed.js 
+```
+
+13. Open your browser and go to [http://localhost:80](http://localhost:80) to access 
