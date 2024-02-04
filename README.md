@@ -2,6 +2,12 @@
 
 ConstituentManager is a web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and styled with Tailwind CSS. It is designed to manage constituents effectively.
 
+Live link: http://www.constituentmanager.com/
+
+Video demo:
+
+https://www.loom.com/share/2b45b9c053154a3e93785e024e4c02b1
+
 ## Table of Contents
 
 - [Features](#features)
