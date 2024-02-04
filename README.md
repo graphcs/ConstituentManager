@@ -78,7 +78,7 @@ docker volume create mongodbdata
 
 8. Start MongoDB in docker with volume for data persistence:
 ```
-docker run -d --name mongodb -v mongodbdata:/data/db -p 27017:27017 mongo
+docker run -d --name mongodb -v mongodbdata:/data/db -p 127.0.0.1:27017:27017 mongo
 ```
 
 9. Seed the database:
