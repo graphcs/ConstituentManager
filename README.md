@@ -8,6 +8,11 @@ Video demo:
 
 https://www.loom.com/share/2b45b9c053154a3e93785e024e4c02b1
 
+Screenshot:
+
+<img width="1022" alt="Screen Shot 2024-02-03 at 7 43 48 PM" src="https://github.com/graphcs/ConstituentManager/assets/2300922/57f88e31-65e1-40b9-ba4d-0538b01ad2b8">
+
+
 ## Table of Contents
 
 - [Features](#features)
