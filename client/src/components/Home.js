@@ -120,6 +120,16 @@ function Home() {
                     </div>
                 </div>
             </div>
+
+            <center>
+                <div class="w-full text-center border-t border-gray-300 mt-10 pt-10 pb-3 p-5">
+                    <br></br>
+                    <br></br>
+                    <a href="https://github.com/graphcs/ConstituentManager" className="text-blue-500 hover:underline">
+                        We're open source! Find us on GitHub
+                    </a>
+                </div>
+            </center>
         </div>
     );
 }
